@@ -93,9 +93,13 @@ export class EitInfoOverlay extends DileOverlayMixin(
   render() {
     return html`
       <span id="trigger" @click=${this.toggle}> ${icon} </span>
-      <div id="overlay" class="${this._overlayClass}">
+      <div id="overlay" @click=${this.stopClick} class="${this._overlayClass}">
         <slot></slot>
       </div>
     `;
+  }
+
+  stopClick(e) {
+    e.stopPropagation();
   }
 }
