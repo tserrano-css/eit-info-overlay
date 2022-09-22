@@ -3,7 +3,7 @@
   "description": "Webcomponent eit-info-overlay following open-wc recommendations",
   "license": "MIT",
   "author": "Toni Serrano",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@open-wc/eslint-config": "^4.3.0",
     "@open-wc/testing": "next",
     "@web/dev-server": "^0.1.28",
-    "@web/dev-server-storybook": "next",
+    "@web/dev-server-storybook": "^0.0.2",
     "@web/test-runner": "^0.13.22",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",

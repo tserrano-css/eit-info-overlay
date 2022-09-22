@@ -94,7 +94,7 @@ export class EitInfoOverlay extends DileOverlayMixin(
     return html`
       <span id="trigger" @click=${this.toggle}> ${icon} </span>
       <div id="overlay" class="${this._overlayClass}">
-        <slot name="info"></slot>
+        <slot></slot>
       </div>
     `;
   }
