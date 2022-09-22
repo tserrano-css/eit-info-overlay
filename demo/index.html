@@ -9,8 +9,16 @@
     </style>
   </head>
   <body>
+    <style>
+      p.center {
+        text-align: center;
+        --eit-info-overlay-icon-size: 50px;
+        --eit-info-overlay-background-color: orange;
+        --eit-info-overlay-color: white;
+      }
+    </style>
+
     <div id="demo"></div>
-    <div id="demo2"></div>
 
     <script type="module">
       import { html, render } from 'lit';
@@ -18,29 +26,11 @@
 
       render(
         html`
-          <eit-info-overlay>
-            esto es lo que aparece
-          </eit-info-overlay>
-        `,
-        document.querySelector('#demo')
-      );
+          <h2>Default info overlay</h2>
+          <eit-info-overlay> esto es lo que aparece </eit-info-overlay>
 
-      render(
-        html`
-          <style>
-            p.right {
-              text-align: right;
-              --eit-info-overlay-icon-color: blue;
-            }
-            p.center {
-              text-align: center;
-              --eit-info-overlay-icon-size: 50px;
-              --eit-info-overlay-background-color: orange;
-              --eit-info-overlay-color: white;
-            }
-          </style>
-
-          <p class="right">
+          <h2>Horizontal align right info overlay</h2>
+          <p class="center">
             <eit-info-overlay
               horizontalAlign="left"
               moveLeft="20"
@@ -50,6 +40,7 @@
             </eit-info-overlay>
           </p>
 
+          <h2>Horizontal align center info overlay</h2>
           <p class="center">
             <eit-info-overlay
               horizontalAlign="center"
@@ -61,7 +52,8 @@
             </eit-info-overlay>
           </p>
         `,
-        document.querySelector('#demo2')
+
+        document.querySelector('#demo')
       );
     </script>
   </body>
