@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { DileOverlayMixin } from '@dile/dile-overlay-mixin';
 import { DileCloseDocumentClickMixin } from '@dile/dile-close-document-click-mixin';
+import { DileCloseOnEscPressed } from '@dile/dile-close-on-esc-pressed-mixin';
 
 const icon = html`<svg
   xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +20,7 @@ const icon = html`<svg
 </svg>`;
 
 export class EitInfoOverlay extends DileOverlayMixin(
-  DileCloseDocumentClickMixin(LitElement)
+  DileCloseDocumentClickMixin(DileCloseOnEscPressed(LitElement))
 ) {
   static styles = [
     css`
@@ -82,7 +83,7 @@ export class EitInfoOverlay extends DileOverlayMixin(
 
   updated(changedProperties) {
     if (changedProperties.has('opened')) {
-      if(this.opened) {
+      if (this.opened) {
         this.open();
       } else {
         this.close();
@@ -101,5 +102,11 @@ export class EitInfoOverlay extends DileOverlayMixin(
 
   stopClick(e) {
     e.stopPropagation();
+  }
+
+  escClose(e) {
+    if (e.key === 'Escape') {
+      this.close();
+    }
   }
 }
